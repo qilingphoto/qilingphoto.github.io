@@ -11,29 +11,36 @@ export default class Image extends Component {
 
   onChange(isVisible) {
     this.setState({ isVisible: isVisible });
+    // if (isVisible) {
+    //   document
+    //     .getElementsByClassName("focused image-container")[0]
+    //     .scrollIntoView();
+    //   this.focusedDiv.scrollIntoView();
+    // }
   }
 
   render() {
     return (
       <VisibilitySensor
         scrollCheck
-        /*scrollThrottle={100}*/
+        scrollThrottle={100}
         partialVisibility
-        intervalDelay={80}
-        offset={{ top: 360, bottom: 360 }}
+        intervalDelay={0}
+        offset={{
+          top: 324,
+          bottom: 360
+        }}
         onChange={this.onChange}
       >
         <div className="image-visibility-sensor">
-          {/*}<img
-            src={this.props.src}
-            alt="qwp"
-            className={this.state.isVisible ? "focused" : "blurred"}
-          />*/}
           <div
             className={
               (this.state.isVisible ? "focused" : "blurred") +
               " image-container"
             }
+            ref={div => {
+              this.focusedDiv = div;
+            }}
           >
             <div className={"image bg-" + this.props.index} />
           </div>
@@ -42,7 +49,7 @@ export default class Image extends Component {
               (this.state.isVisible ? "focused" : "blurred") + " image-caption"
             }
           >
-            lol who is this doggie!!
+            {this.props.caption}
           </p>
         </div>
       </VisibilitySensor>

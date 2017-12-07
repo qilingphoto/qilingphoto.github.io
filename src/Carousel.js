@@ -4,23 +4,24 @@ import "./app.css";
 
 export default class Carousel extends Component {
   render() {
+    // src work from app.css
     const images = [
       {
-        src:
-          "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/23471954_2066325040262331_724211497049084082_n.jpg?oh=5a5950471b79a0e79dcabd669f90c923&oe=5A9BE5E6"
+        caption:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque urna a lobortis pharetra. Etiam finibus sem non ligula fermentum, quis pulvinar felis facilisis. Nam sodales sit amet tellus nec auctor."
       },
       {
-        src:
-          "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/23471954_2066325040262331_724211497049084082_n.jpg?oh=5a5950471b79a0e79dcabd669f90c923&oe=5A9BE5E6"
+        caption:
+          "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam placerat ante eget nulla fringilla, ac tristique ante cursus. Praesent pretium sed tortor eu consequat. Ut semper enim ac ipsum dictum dictum."
       },
       {
-        src:
-          "https://scontent-sjc2-1.xx.fbcdn.net/v/t1.0-9/23471954_2066325040262331_724211497049084082_n.jpg?oh=5a5950471b79a0e79dcabd669f90c923&oe=5A9BE5E6"
+        caption:
+          "Nullam imperdiet molestie orci sed vulputate. Integer vehicula sit amet sapien a facilisis. Proin iaculis ex id nibh maximus cursus et eu leo. Aliquam erat volutpat. Nam nec tellus bibendum, porttitor magna eu, interdum neque."
       }
     ];
 
     return images.map((image, index) => (
-      <Image src={image.src} key={index} index={index} />
+      <Image caption={image.caption} key={index} index={index} />
     ));
   }
 }
