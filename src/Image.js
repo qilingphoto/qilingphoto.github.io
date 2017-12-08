@@ -43,13 +43,14 @@ export default class Image extends Component {
             }}
           >
             <div className={"image bg-" + this.props.index} />
+            <p className="image-caption">{this.props.caption}</p>
           </div>
           <p
             className={
-              (this.state.isVisible ? "focused" : "blurred") + " image-caption"
+              (this.state.isVisible ? "focused" : "blurred") + " image-story"
             }
           >
-            {this.props.caption}
+            {this.props.story}
           </p>
         </div>
       </VisibilitySensor>
