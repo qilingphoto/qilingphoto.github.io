@@ -42,7 +42,7 @@ export default class Image extends Component {
               this.focusedDiv = div;
             }}
           >
-            <div className={"image bg-" + this.props.index} />
+            <div className={"image bg" + this.props.index} />
             <p className="image-caption">{this.props.caption}</p>
           </div>
           <p
